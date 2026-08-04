@@ -1,0 +1,16 @@
+# ==============================================================================
+# PLANTILLA DE CONFIGURACIÓN DE BASE DE DATOS
+# ==============================================================================
+# 
+# INSTRUCCIONES PARA CADA DESARROLLADOR:
+# 1. Copia este archivo y renómbralo a: config.properties
+# 2. Cambia db.password por TU contraseña local de PostgreSQL
+# 3. Asegúrate de tener PostgreSQL corriendo en localhost:5432
+# 4. Ejecuta el script "creacion de base de datos.sql" para crear las tablas
+#
+# ⚠️  NUNCA subas config.properties al repositorio (ya está en .gitignore)
+# ==============================================================================
+
+db.url=jdbc:postgresql://localhost:5432/tiendita
+db.user=postgres
+db.password=TU_CONTRASEÑA_AQUI
