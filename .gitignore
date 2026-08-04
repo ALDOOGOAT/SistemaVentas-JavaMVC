@@ -1,0 +1,7 @@
+# Credenciales locales (NUNCA subir al repo)
+config.properties
+
+# NetBeans build output
+/build/
+/dist/
+/nbproject/private/
