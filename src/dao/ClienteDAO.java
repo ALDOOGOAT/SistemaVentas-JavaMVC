@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Capa de acceso a datos para la tabla Clientes.
+ *
  * @author Daniel
  */
 public class ClienteDAO {
@@ -121,8 +122,29 @@ public class ClienteDAO {
     }
 
     private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
-        try { if (rs != null) rs.close(); } catch (SQLException e) { /* ignorar */ }
-        try { if (ps != null) ps.close(); } catch (SQLException e) { /* ignorar */ }
-        try { if (con != null) con.close(); } catch (SQLException e) { /* ignorar */ }
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+        } catch (SQLException e) {
+            System.err.println("Error cerrando ResultSet: " + e.getMessage());
+        }
+
+        try {
+            if (ps != null) {
+                ps.close();
+            }
+        } catch (SQLException e) {
+            System.err.println("Error cerrando PreparedStatement: " + e.getMessage());
+        }
+
+        try {
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e) {
+            System.err.println("Error cerrando Connection: " + e.getMessage());
+        }
     }
 }
+
