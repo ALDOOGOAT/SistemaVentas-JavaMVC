@@ -100,6 +100,27 @@ public class Conexion {
     }
 
     /**
+     * Crea y retorna una conexión NUEVA e independiente a PostgreSQL (NO la
+     * singleton compartida). Reutiliza las credenciales cargadas desde
+     * {@code config.properties}.
+     *
+     * <p>Pensado para DAOs que mantienen su propia conexión persistente (al
+     * estilo del proyecto Tiendita), de modo que cerrar la conexión de un DAO
+     * no afecte al resto de módulos que usan la instancia singleton.</p>
+     *
+     * @return una nueva {@link Connection} independiente
+     * @throws SQLException si ocurre un error al conectar
+     */
+    public Connection nuevaConexion() throws SQLException {
+        try {
+            Class.forName("org.postgresql.Driver");
+            return DriverManager.getConnection(url, usuario, password);
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("Driver JDBC de PostgreSQL no disponible.", e);
+        }
+    }
+
+    /**
      * Cierra la conexión activa de forma segura.
      */
     public void cerrarConexion() {
