@@ -49,15 +49,15 @@ public class Conexion {
                 System.err.println("ERROR: No se encontró el archivo config.properties");
                 System.err.println("Crea el archivo a partir de config.properties.template");
                 // Valores por defecto como respaldo
-                props.setProperty("db.url", "jdbc:postgresql://localhost:5432/gestion_ventas");
+                props.setProperty("db.url", "jdbc:postgresql://localhost:5432/tiendita");
                 props.setProperty("db.user", "postgres");
-                props.setProperty("db.password", "");
+                props.setProperty("db.password", "0506");
             }
         }
 
         this.url = props.getProperty("db.url", "jdbc:postgresql://localhost:5432/gestion_ventas");
         this.usuario = props.getProperty("db.user", "postgres");
-        this.password = props.getProperty("db.password", "");
+        this.password = props.getProperty("db.password", "0506");
     }
 
     /**
