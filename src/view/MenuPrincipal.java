@@ -154,14 +154,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                //  Crea el objeto de la ventana al tocar el boton
-    VistaProductos VentanaProductos = new VistaProductos();
+                //  Crea el objeto de la ventana de gestión de productos
+    AdministrarProductos ventanaProductos = new AdministrarProductos();
+    new controller.AdministrarProductoController(ventanaProductos);
 
     //  Hace visible la nueva ventana
-    VentanaProductos.setVisible(true);
+    ventanaProductos.setVisible(true);
 
     //  centra la ventana
-    VentanaProductos.setLocationRelativeTo(null);
+    ventanaProductos.setLocationRelativeTo(null);
 
     //  Cierrar el menú
     this.dispose();
