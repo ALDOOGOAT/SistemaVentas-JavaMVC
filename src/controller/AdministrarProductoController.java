@@ -109,7 +109,7 @@ public class AdministrarProductoController implements ActionListener, ListSelect
         if (e.getSource() == vista.botonRegresar) {
             productoDAO.cerrarConexion();
             vista.dispose();
-            // El menú principal seguiría abierto detrás
+            new view.MenuPrincipal().setVisible(true);
         }
     }
 

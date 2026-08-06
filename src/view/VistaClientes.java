@@ -60,6 +60,14 @@ public class VistaClientes extends JFrame {
         lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblTitle.setForeground(Color.WHITE);
         headerPanel.add(lblTitle, BorderLayout.WEST);
+        
+        JButton btnRegresar = createStyledButton("← Regresar", new Color(108, 117, 125), Color.WHITE);
+        btnRegresar.addActionListener(e -> {
+            this.dispose();
+            new MenuPrincipal().setVisible(true);
+        });
+        headerPanel.add(btnRegresar, BorderLayout.EAST);
+        
         mainPanel.add(headerPanel, BorderLayout.NORTH);
 
         // --- CONTENT WRAPPER ---
